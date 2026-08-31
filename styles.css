@@ -23,6 +23,19 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Make font size bigger on desktop screens */
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 19px;
+  }
+}
+
 body {
   background: var(--bg);
   color: var(--white);
@@ -286,7 +299,7 @@ nav {
   align-items: center;
   gap: 5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
 }
@@ -332,7 +345,7 @@ nav {
 }
 
 .hero-name {
-  font-size: clamp(3rem, 6.5vw, 5.2rem);
+  font-size: clamp(3.2rem, 7vw, 5.6rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.025em;
@@ -367,10 +380,10 @@ nav {
 }
 
 .hero-desc {
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   color: var(--muted);
   line-height: 1.85;
-  max-width: 460px;
+  max-width: 520px;
   margin-bottom: 2.4rem;
   font-weight: 500;
 }
@@ -385,10 +398,10 @@ nav {
   background: var(--accent);
   color: #fff;
   text-decoration: none;
-  padding: 0.85rem 1.9rem;
+  padding: 0.92rem 2.1rem;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.96rem;
   letter-spacing: 0.03em;
   transition: opacity 0.2s, transform 0.2s;
   display: inline-flex;
@@ -405,10 +418,10 @@ nav {
   border: 1px solid var(--border);
   color: var(--white);
   text-decoration: none;
-  padding: 0.85rem 1.9rem;
+  padding: 0.92rem 2.1rem;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.96rem;
   letter-spacing: 0.03em;
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
   display: inline-flex;
@@ -432,7 +445,7 @@ nav {
 .metric {}
 
 .metric-num {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.02em;
@@ -444,11 +457,11 @@ nav {
 }
 
 .metric-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: var(--muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .metric-divider {
@@ -502,7 +515,7 @@ nav {
 .profile-card {
   position: relative;
   z-index: 1;
-  width: 340px;
+  width: 400px;
   background: var(--card);
   border: 1px solid rgba(79, 139, 255, 0.3);
   border-radius: 200px;
@@ -531,7 +544,7 @@ nav {
 
 .profile-head {
   position: relative;
-  height: 320px;
+  height: 390px;
   overflow: hidden;
   border-radius: 20px 20px 0 0;
 }
@@ -782,7 +795,7 @@ section {
 }
 
 .section-title {
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -796,9 +809,9 @@ section {
 
 .section-sub {
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.75;
-  max-width: 520px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  max-width: 600px;
 }
 
 .divider {
@@ -922,16 +935,23 @@ section {
 /* ── Services ───────────────────────────────── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
   margin-top: 3rem;
+}
+
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+  }
 }
 
 .service-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 1.8rem;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
   transition: border-color 0.25s, transform 0.25s;
@@ -959,43 +979,43 @@ section {
 }
 
 .service-icon {
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
   background: rgba(79, 139, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   color: var(--accent);
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.2rem;
 }
 
 .service-card h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .service-card p {
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .service-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1rem;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
 }
 
 .stag {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   background: rgba(79, 139, 255, 0.08);
   color: var(--accent);
-  padding: 3px 9px;
+  padding: 4px 10px;
   border-radius: 4px;
 }
 
