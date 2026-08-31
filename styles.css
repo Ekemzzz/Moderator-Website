@@ -723,10 +723,10 @@ nav {
 .marquee-strip {
   overflow: hidden;
   width: 100%;
-  padding: 0.7rem 0;
-  border-top: 1px solid rgba(79, 139, 255, 0.12);
-  border-bottom: 1px solid rgba(0, 229, 160, 0.1);
-  background: linear-gradient(90deg, rgba(79, 139, 255, 0.03), rgba(0, 229, 160, 0.02), rgba(79, 139, 255, 0.03));
+  padding: 0.95rem 0;
+  border-top: 1px solid rgba(79, 139, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 229, 160, 0.15);
+  background: linear-gradient(90deg, rgba(79, 139, 255, 0.04), rgba(0, 229, 160, 0.03), rgba(79, 139, 255, 0.04));
 }
 
 .marquee-track {
@@ -749,18 +749,20 @@ nav {
 
 .marquee-item {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--accent);
-  padding: 0 1.1rem;
+  padding: 0 1.4rem;
   white-space: nowrap;
   flex-shrink: 0;
+  letter-spacing: 0.03em;
 }
 
 .marquee-item::after {
   content: '·';
-  color: rgba(0, 229, 160, 0.5);
-  margin-left: 1.1rem;
+  color: var(--green);
+  margin-left: 1.4rem;
+  font-weight: 700;
 }
 
 @keyframes marquee-scroll {
@@ -856,9 +858,9 @@ section {
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--white);
-  font-size: 0.76rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: 100px;
   letter-spacing: 0.04em;
 }
@@ -1250,7 +1252,7 @@ section {
 }
 
 .work-desc {
-  font-size: 0.86rem;
+  font-size: 0.92rem;
   color: var(--muted);
   line-height: 1.75;
   margin-bottom: 1.1rem;
@@ -1266,18 +1268,18 @@ section {
   background: rgba(79, 139, 255, 0.06);
   border: 1px solid rgba(79, 139, 255, 0.1);
   border-radius: 8px;
-  padding: 0.6rem 0.5rem;
+  padding: 0.65rem 0.5rem;
   text-align: center;
 }
 
 .result-num {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--accent);
 }
 
 .result-label {
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -2075,6 +2077,10 @@ footer p {
     border-left: 1px solid var(--border);
     z-index: 99;
     gap: 1.5rem;
+  }
+
+  .nav-links.open a {
+    font-size: 1.05rem;
   }
 }
 
