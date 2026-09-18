@@ -1264,6 +1264,17 @@ section {
   gap: 0.6rem;
 }
 
+@media (max-width: 560px) {
+  .work-results {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .work-results .result-box:nth-child(3):last-child {
+    grid-column: span 2;
+  }
+}
+
 .result-box {
   background: rgba(79, 139, 255, 0.06);
   border: 1px solid rgba(79, 139, 255, 0.1);
@@ -1588,6 +1599,25 @@ section {
   margin-top: 3rem;
 }
 
+@media (max-width: 560px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .impact-card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .impact-num {
+    font-size: 1.8rem;
+  }
+
+  .impact-label {
+    font-size: 0.72rem;
+  }
+}
+
 .impact-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -1628,19 +1658,66 @@ section {
 
 /* ── Tools ───────────────────────────────────── */
 .tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.4rem;
   margin-top: 3rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tool-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 0.9rem;
+  text-align: center;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s, box-shadow 0.25s;
+  flex: 0 0 calc(50% - 0.7rem);
+  box-sizing: border-box;
+}
+
+.tool-card:hover {
+  border-color: var(--accent);
+  background: rgba(79, 139, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card i {
+  font-size: 1.7rem;
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+  transition: transform 0.25s;
+}
+
+.tool-card:hover i {
+  transform: scale(1.1);
+}
+
+.tool-card span {
+  font-size: 0.85rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+@media (min-width: 561px) {
+  .tool-card {
+    flex: 0 0 calc(33.333% - 0.95rem);
+  }
 }
 
 @media (min-width: 992px) {
   .tools-grid {
-    grid-template-columns: repeat(6, 1fr);
     gap: 1.8rem;
+    max-width: 1000px;
   }
 
   .tool-card {
+    flex: 0 0 calc(25% - 1.35rem);
     padding: 1.8rem 1rem;
   }
 
@@ -1652,48 +1729,6 @@ section {
   .tool-card span {
     font-size: 0.92rem;
   }
-}
-
-@media (max-width: 991px) {
-  .tools-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-  }
-}
-
-@media (max-width: 560px) {
-  .tools-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-.tool-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.4rem 0.9rem;
-  text-align: center;
-  transition: border-color 0.25s, background 0.25s, transform 0.25s;
-}
-
-.tool-card:hover {
-  border-color: var(--accent);
-  background: rgba(79, 139, 255, 0.08);
-  transform: translateY(-4px);
-}
-
-.tool-card i {
-  font-size: 1.7rem;
-  display: block;
-  margin-bottom: 0.6rem;
-  color: var(--accent);
-}
-
-.tool-card span {
-  font-size: 0.85rem;
-  color: var(--white);
-  font-weight: 600;
 }
 
 /* ── Testimonials ────────────────────────────── */
@@ -1714,6 +1749,8 @@ section {
   border-radius: 16px;
   padding: 1.8rem;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .tcard-stars {
@@ -1737,12 +1774,14 @@ section {
   line-height: 1.8;
   font-style: italic;
   margin: 0.3rem 0 1.4rem;
+  flex: 1;
 }
 
 .tcard-author {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .tcard-avatar {
@@ -2028,6 +2067,15 @@ footer p {
 
 /* ── Responsive ──────────────────────────────── */
 @media (max-width: 960px) {
+  body {
+    cursor: auto !important;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+
   .hero-inner {
     flex-direction: column;
     gap: 3rem;
@@ -2061,7 +2109,7 @@ footer p {
 
   .nav-toggle {
     display: flex;
-    cursor: none;
+    cursor: pointer;
   }
 
   .nav-links.open {
@@ -2077,6 +2125,7 @@ footer p {
     border-left: 1px solid var(--border);
     z-index: 99;
     gap: 1.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   }
 
   .nav-links.open a {
@@ -2093,10 +2142,6 @@ footer p {
     width: 100%;
   }
 
-  .work-results {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .laos-box {
     gap: 1rem;
     padding: 1rem;
@@ -2110,5 +2155,23 @@ footer p {
 
   .laos-box-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 3.5rem 4vw;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }
