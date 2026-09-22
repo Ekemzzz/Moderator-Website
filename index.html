@@ -102,7 +102,8 @@
         <div class="hero-right">
           <div class="profile-card">
             <div class="profile-head">
-              <div class="profile-avatar"><img src="./ecommerce-product.png" alt="Profile photo" loading="lazy">
+              <div class="profile-avatar"><img src="./ecommerce-product.png" alt="Profile photo" fetchpriority="high"
+                  decoding="async">
               </div>
               <div class="profile-head-overlay">
                 <div class="profile-name">Eshiet Ekemini</div>
@@ -957,7 +958,8 @@
       <h3>All LAOS designs <span class="laos-count">54</span></h3>
       <button class="lb-btn lm-close" id="lmClose" aria-label="Close gallery"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="laos-grid">
+    <template class="gallery-template">
+      <div class="laos-grid">
       <img class="laos-thumb" src="./LAOS%20Designs/LAOS%20Design.jpg" alt="LAOS platform features explainer"
         loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Designs/LAOS%20Design.png" alt="The LAOS Mission brand visual"
@@ -1066,7 +1068,8 @@
         loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Designs/LAOS_20260103_084623_0000.png"
         alt="LAOS Bitcoin NFTs campaign visual" loading="lazy">
-    </div>
+      </div>
+    </template>
   </div>
 
   <div class="laos-modal" id="memesModal" aria-hidden="true" role="dialog" aria-label="All LAOS memes">
@@ -1075,7 +1078,8 @@
       <button class="lb-btn lm-close" id="mmClose" aria-label="Close meme gallery"><i
           class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="laos-grid">
+    <template class="gallery-template">
+      <div class="laos-grid">
       <img class="laos-thumb" src="./LAOS%20Memes/20250311_093851_0000.jpg" alt="LAOS community meme" loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Memes/9kht33.jpg" alt="LAOS community meme" loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Memes/9lk500.jpg" alt="LAOS community meme" loading="lazy">
@@ -1124,7 +1128,8 @@
       <img class="laos-thumb" src="./LAOS%20Memes/aggw36.jpg" alt="LAOS community meme" loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Memes/agv1uz.jpg" alt="LAOS community meme" loading="lazy">
       <img class="laos-thumb" src="./LAOS%20Memes/agz10b.jpg" alt="LAOS community meme" loading="lazy">
-    </div>
+      </div>
+    </template>
   </div>
 
   <div class="laos-modal" id="otherModal" aria-hidden="true" role="dialog" aria-label="Other project designs">
@@ -1133,13 +1138,15 @@
       <button class="lb-btn lm-close" id="omClose" aria-label="Close other designs gallery"><i
           class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="laos-grid">
+    <template class="gallery-template">
+      <div class="laos-grid">
       <img class="laos-thumb" src="./Other%20Designs/Cere%20Designs.jpg" alt="Cere Network design" loading="lazy">
       <img class="laos-thumb" src="./Other%20Designs/Cere%20Designs%20(2).jpg" alt="Cere Network design" loading="lazy">
       <img class="laos-thumb" src="./Other%20Designs/Colossus%20Designs.jpg" alt="Colossus design" loading="lazy">
       <img class="laos-thumb" src="./Other%20Designs/DigiShares.png" alt="DigiShares design" loading="lazy">
       <img class="laos-thumb" src="./Other%20Designs/Junction%20Design.jpg" alt="Junction design" loading="lazy">
-    </div>
+      </div>
+    </template>
   </div>
 
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Design viewer">

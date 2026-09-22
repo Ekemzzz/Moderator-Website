@@ -177,15 +177,18 @@ serviceSelect.addEventListener('change', () => {
 });
 
 // Lightbox — click any design (gallery cards or strip thumbs) to enlarge
-const zoomables = Array.from(document.querySelectorAll('.content-card img, .laos-thumb'));
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbCaption = document.getElementById('lbCaption');
 let lbIndex = 0;
 
-function openLightbox(i) {
-  lbIndex = i;
-  const img = zoomables[i];
+function getZoomables() {
+  return Array.from(document.querySelectorAll('.content-card img, .laos-thumb'));
+}
+
+function openLightbox(img) {
+  const zoomables = getZoomables();
+  lbIndex = zoomables.indexOf(img);
   lbImg.src = img.src;
   lbCaption.textContent = img.alt;
   lightbox.classList.add('open');
@@ -200,10 +203,14 @@ function closeLightbox() {
 }
 
 function stepLightbox(d) {
-  openLightbox((lbIndex + d + zoomables.length) % zoomables.length);
+  const zoomables = getZoomables();
+  openLightbox(zoomables[(lbIndex + d + zoomables.length) % zoomables.length]);
 }
 
-zoomables.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+document.addEventListener('click', event => {
+  const image = event.target.closest('.content-card img, .laos-thumb');
+  if (image) openLightbox(image);
+});
 document.getElementById('lbClose').addEventListener('click', closeLightbox);
 document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); stepLightbox(-1); });
 document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); stepLightbox(1); });
@@ -214,12 +221,19 @@ const galleryModals = [];
 
 function bindGalleryModal(boxId, modalId, closeId) {
   const modal = document.getElementById(modalId);
+  const loadGallery = () => {
+    const template = modal.querySelector('.gallery-template');
+    if (!template) return;
+    modal.querySelector('.laos-modal-head').after(template.content.cloneNode(true));
+    template.remove();
+  };
   const close = () => {
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
     if (!lightbox.classList.contains('open')) document.body.style.overflow = '';
   };
   document.getElementById(boxId).addEventListener('click', () => {
+    loadGallery();
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
