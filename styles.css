@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Make font size bigger on desktop screens */
@@ -41,6 +42,10 @@ body {
   color: var(--white);
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* ── Ambient background fx — film grain + spotlight ── */
@@ -2170,8 +2175,191 @@ footer p {
   }
 
   .btn-primary,
-  .btn-secondary {
+  .btn-outline {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Small-screen layout safeguards */
+.hero-left,
+.about-grid > *,
+.contact-grid > *,
+.work-card,
+.channel-link span {
+  min-width: 0;
+}
+
+.channel-link span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 767px) {
+  nav {
+    padding: 1rem 5vw;
+  }
+
+  .nav-links.open {
+    width: min(84vw, 320px);
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 7rem 5vw 4rem;
+  }
+
+  .hero-inner {
+    gap: 2.5rem;
+  }
+
+  .profile-card {
+    width: min(100%, 400px);
+  }
+
+  .profile-head {
+    height: min(105vw, 390px);
+  }
+
+  section {
+    padding: 4.5rem 5vw;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+  }
+
+  .services-grid,
+  .work-grid,
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .service-card,
+  .tcard {
+    padding: 1.5rem;
+  }
+
+  .work-card-header,
+  .work-footer {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .work-body {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .laos-modal {
+    padding: 4.25rem 4vw 2rem;
+  }
+
+  .laos-modal .laos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: clamp(2.7rem, 13vw, 3.5rem);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .metric-divider {
+    display: none;
+  }
+
+  .metric-num {
+    font-size: 1.55rem;
+  }
+
+  .metric-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    line-height: 1.35;
+  }
+
+  .laos-box {
+    align-items: flex-start;
+  }
+
+  .laos-box-text h3 {
+    font-size: 0.95rem;
+  }
+
+  .laos-box-text p {
+    line-height: 1.45;
+  }
+
+  .lightbox img {
+    max-width: calc(100vw - 2rem);
+    max-height: 72svh;
+  }
+
+  .lb-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lb-prev,
+  .lb-next {
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+  }
+
+  .lb-prev {
+    left: calc(50% - 48px);
+  }
+
+  .lb-next {
+    right: calc(50% - 48px);
+  }
+
+  .lb-caption {
+    bottom: 4.5rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-socials {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hire-me-sticky {
+    left: 1rem;
+    bottom: 1rem;
+    padding: 0.7rem 1.1rem;
+  }
+
+  .scroll-btn {
+    right: 1rem;
   }
 }
