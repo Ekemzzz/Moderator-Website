@@ -170,11 +170,13 @@ function showSuccessMessage(fname, isMailto = false) {
 // "Other" service — reveal a field to type what they need
 const serviceSelect = document.getElementById('service');
 const otherServiceGroup = document.getElementById('otherServiceGroup');
-serviceSelect.addEventListener('change', () => {
-  const isOther = serviceSelect.value === 'Other';
-  otherServiceGroup.classList.toggle('hidden', !isOther);
-  if (isOther) document.getElementById('otherService').focus();
-});
+if (serviceSelect && otherServiceGroup) {
+  serviceSelect.addEventListener('change', () => {
+    const isOther = serviceSelect.value === 'Other';
+    otherServiceGroup.classList.toggle('hidden', !isOther);
+    if (isOther) document.getElementById('otherService').focus();
+  });
+}
 
 // Lightbox — click any design (gallery cards or strip thumbs) to enlarge
 const lightbox = document.getElementById('lightbox');

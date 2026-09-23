@@ -1881,7 +1881,7 @@ section {
 /* ── Contact ─────────────────────────────── */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
+  grid-template-columns: 1fr;
   gap: 4.5rem;
   align-items: stretch;
   margin-top: 3rem;
@@ -1932,103 +1932,6 @@ section {
 .channel-link span {
   font-size: 0.88rem;
   font-weight: 600;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 1.2rem;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-}
-
-.fgroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-}
-
-.fgroup.msg-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.fgroup.hidden {
-  display: none;
-}
-
-.fgroup label {
-  font-size: 0.75rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-weight: 600;
-}
-
-.fgroup input,
-.fgroup textarea,
-.fgroup select {
-  background: var(--card);
-  border: 1px solid var(--border);
-  color: var(--white);
-  padding: 0.85rem 1.1rem;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.92rem;
-  outline: none;
-  transition: border-color 0.2s;
-  resize: vertical;
-}
-
-.fgroup textarea {
-  flex: 1;
-  min-height: 140px;
-}
-
-.fgroup input:focus,
-.fgroup textarea:focus,
-.fgroup select:focus {
-  border-color: var(--accent);
-}
-
-.fgroup select option {
-  background: var(--bg2);
-}
-
-.btn-submit {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 1rem 2.2rem;
-  border-radius: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.96rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  width: 100%;
-}
-
-.btn-submit:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
 }
 
 /* ── Footer ──────────────────────────────── */
@@ -2193,10 +2096,6 @@ footer p {
 }
 
 @media (max-width: 560px) {
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
   .profile-card {
     width: 100%;
   }
