@@ -817,7 +817,6 @@ section {
   color: var(--muted);
   font-size: 1.12rem;
   line-height: 1.8;
-  max-width: 880px;
 }
 
 .divider {
@@ -1475,7 +1474,7 @@ section {
   background: rgba(5, 8, 15, 0.94);
   backdrop-filter: blur(10px);
   overflow-y: auto;
-  padding: 4.5rem 6vw 3rem;
+  padding: 1.5rem 6vw 3rem;
 }
 
 .laos-modal.open {
@@ -1486,18 +1485,52 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto 1.4rem;
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  background: rgba(5, 8, 15, 0.94);
+  z-index: 2;
 }
 
 .laos-modal-head h3 {
   font-size: 1.15rem;
   font-weight: 700;
+  flex: 1;
+  min-width: 0;
+  padding-right: 0.5rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
-.lm-close {
-  position: static;
+.laos-modal-head .lm-close {
+  position: relative;
   transform: none;
+  flex-shrink: 0;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+
+@media (max-width: 480px) {
+  .laos-modal-head {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .laos-modal-head h3 {
+    font-size: 1rem;
+    padding-top: 0.4rem;
+    padding-right: 0;
+  }
+
+  .lm-close {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .laos-modal .laos-grid {
