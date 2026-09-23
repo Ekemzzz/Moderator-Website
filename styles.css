@@ -264,7 +264,7 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 9rem 6vw 5rem;
+  padding: 5.5rem 6vw 2.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -302,7 +302,7 @@ nav {
 .hero-inner {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 4.5rem;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -520,8 +520,8 @@ nav {
   z-index: 1;
   width: 400px;
   background: var(--card);
-  border: 1px solid rgba(79, 139, 255, 0.3);
-  border-radius: 200px;
+  border: 1px solid rgba(79, 139, 255, 0.35);
+  border-radius: 24px;
   padding: 0;
   overflow: hidden;
   transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
@@ -543,13 +543,14 @@ nav {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--green), var(--pink));
+  z-index: 2;
 }
 
 .profile-head {
   position: relative;
-  height: 390px;
+  height: 440px;
   overflow: hidden;
-  border-radius: 20px 20px 0 0;
+  border-radius: 24px;
 }
 
 .profile-avatar {
@@ -567,7 +568,7 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center 20%;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -836,7 +837,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 5rem;
-  align-items: start;
+  align-items: stretch;
   margin-top: 3rem;
 }
 
@@ -892,6 +893,10 @@ section {
   gap: 1rem;
 }
 
+.about-right > div:last-child {
+  flex: 1;
+}
+
 .info-row {
   background: var(--card);
   border: 1px solid var(--border);
@@ -929,9 +934,8 @@ section {
 }
 
 .exp-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.8rem;
+  display: block;
+  margin-bottom: 1.2rem;
 }
 
 .exp-label {
