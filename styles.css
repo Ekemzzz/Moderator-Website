@@ -313,42 +313,6 @@ nav {
   flex: 1;
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(79, 139, 255, 0.1);
-  border: 1px solid rgba(79, 139, 255, 0.25);
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 100px;
-  margin-bottom: 1.6rem;
-}
-
-.hero-eyebrow span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: blink 2s ease-in-out infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1
-  }
-
-  50% {
-    opacity: 0.3
-  }
-}
-
 .hero-name {
   font-size: clamp(3.2rem, 7vw, 5.6rem);
   font-weight: 800;
@@ -599,132 +563,6 @@ nav {
   margin-bottom: 0;
 }
 
-.profile-body {
-  background: rgba(10, 14, 26, 0.55);
-  border-top: 1px solid var(--border);
-  padding: 1.2rem 1.3rem 1.2rem;
-}
-
-.profile-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-  margin-bottom: 1.4rem;
-}
-
-.pstat {
-  background: rgba(79, 139, 255, 0.07);
-  border: 1px solid rgba(79, 139, 255, 0.12);
-  border-radius: 10px;
-  padding: 0.75rem;
-}
-
-.pstat-num {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--accent);
-}
-
-.pstat-label {
-  font-size: 0.68rem;
-  color: var(--muted);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.profile-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.ptag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 100px;
-  letter-spacing: 0.05em;
-}
-
-.ptag.blue {
-  background: rgba(79, 139, 255, 0.12);
-  color: var(--accent);
-}
-
-.ptag.green {
-  background: rgba(0, 229, 160, 0.1);
-  color: var(--green);
-}
-
-.ptag.pink {
-  background: rgba(255, 79, 163, 0.1);
-  color: var(--pink);
-}
-
-.available-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--green);
-  background: rgba(0, 229, 160, 0.08);
-  border: 1px solid rgba(0, 229, 160, 0.2);
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-top: 1rem;
-}
-
-.available-badge span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: blink 1.5s ease-in-out infinite;
-}
-
-/* ── Card stats row ──────────────────────── */
-.card-stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: 0.85rem;
-  background: rgba(10, 14, 26, 0.7);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.cstat {
-  padding: 0.85rem 0.5rem;
-  text-align: center;
-  border-right: 1px solid var(--border);
-  transition: background 0.2s;
-}
-
-.cstat:last-child {
-  border-right: none;
-}
-
-.cstat:hover {
-  background: rgba(79, 139, 255, 0.07);
-}
-
-.cstat-num {
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.cstat-label {
-  font-size: 0.6rem;
-  color: var(--muted);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-top: 3px;
-}
-
 /* ── Marquee ─────────────────────────────── */
 .marquee-strip {
   overflow: hidden;
@@ -937,11 +775,6 @@ section {
   margin-bottom: 1.2rem;
 }
 
-.exp-label {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
 .exp-bar {
   height: 4px;
   background: rgba(79, 139, 255, 0.12);
@@ -1097,22 +930,6 @@ section {
   font-size: 1.5rem;
 }
 
-.work-icon.dual {
-  width: 86px;
-  gap: 0.45rem;
-  font-size: 1.22rem;
-  background: rgba(79, 139, 255, 0.14);
-  color: var(--white);
-}
-
-.work-icon.dual .fa-discord {
-  color: #5865f2;
-}
-
-.work-icon.dual .fa-telegram {
-  color: #229ed9;
-}
-
 .work-icon.laos-logo {
   background: #ffffff;
   padding: 6px;
@@ -1124,11 +941,6 @@ section {
   object-fit: contain;
   border-radius: 8px;
   display: block;
-}
-
-.work-icon.discord {
-  background: rgba(88, 101, 242, 0.2);
-  color: #5865f2;
 }
 
 .work-icon.laskill-logo {
@@ -1200,31 +1012,6 @@ section {
   object-fit: cover;
   border-radius: 14px;
   display: block;
-}
-
-.work-icon.twitter {
-  background: rgba(29, 161, 242, 0.15);
-  color: #1da1f2;
-}
-
-.work-icon.slack {
-  background: rgba(74, 21, 75, 0.2);
-  color: #e01e5a;
-}
-
-.work-icon.reddit {
-  background: rgba(255, 69, 0, 0.15);
-  color: #ff4500;
-}
-
-.work-icon.youtube {
-  background: rgba(255, 0, 0, 0.12);
-  color: #ff0000;
-}
-
-.work-icon.forum {
-  background: rgba(0, 229, 160, 0.1);
-  color: var(--green);
 }
 
 .work-meta {
