@@ -157,7 +157,7 @@ bindGalleryModal('memesBox', 'memesModal', 'mmClose');
 bindGalleryModal('otherBox', 'otherModal', 'omClose');
 
 // Animated tab title — slow marquee, plus a "come back" nudge when the tab loses focus
-const baseTitle = 'Eshiet Ekemini — Community Manager ✦ ';
+const baseTitle = 'Eshiet Ekemini — Community Manager ';
 let titlePos = 0;
 let titleTimer = setInterval(rotateTitle, 350);
 
@@ -168,7 +168,7 @@ function rotateTitle() {
 
 window.addEventListener('blur', () => {
   clearInterval(titleTimer);
-  document.title = '✦ Come back — let\'s build your community';
+  document.title = 'Come back — let\'s build your community';
 });
 
 window.addEventListener('focus', () => {
