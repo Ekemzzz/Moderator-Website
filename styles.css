@@ -132,15 +132,6 @@ nav {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-logo-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: inline-block;
 }
 
 .nav-right {
